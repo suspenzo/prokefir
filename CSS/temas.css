@@ -1,0 +1,63 @@
+/* Estilos base del dropbtn */
+.theme-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.theme-dropdown .dropbtn {
+    background-color: #558c03;  /* color claro inicial */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.theme-dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f2f2f2; /* fondo claro inicial */
+    min-width: 150px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    top: 100%;
+    left: 0;
+    overflow: hidden;
+    z-index: 999;
+}
+
+.theme-dropdown .dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #558c03;
+    font-weight: normal;
+}
+
+.theme-dropdown .dropdown-content a:hover {
+    background-color: #dbff8e;
+    color: white;
+}
+
+/* Mostrar menú al pasar el cursor */
+.theme-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* ----- Estilos para tema oscuro ----- */
+.theme-dropdown.dark .dropbtn {
+    background-color: #222831;
+}
+
+.theme-dropdown.dark .dropdown-content {
+    background-color: #393e46;
+}
+
+.theme-dropdown.dark .dropdown-content a {
+    color: #eee;
+}
+
+.theme-dropdown.dark .dropdown-content a:hover {
+    background-color: #00adb5;
+    color: #fff;
+}

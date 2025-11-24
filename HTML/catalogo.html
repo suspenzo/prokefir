@@ -1,0 +1,73 @@
+<html>
+	<head>
+	
+	    <link rel="stylesheet" href="../CSS/styles.css">
+
+	</head>
+	
+	<body>
+	
+		<header>
+		<a href = "INDEX.HTML"> <img src="../imagenes/logoheader.png" height= 90px> </a>
+        <nav>
+            <a href="catalogo.html">Productos</a>
+            <!--<a href="#beneficios">Beneficios</a> -->
+			
+			<div class="dropdown">
+            <a class="dropbtn">Sobre Nosotros</a>
+
+            <div class="dropdown-content">
+                <a href="aboutusN.html">¿Quienes somos?</a>
+                <a href="testimonio.html">Testimonios</a>
+                <a href="contacto.html">Contáctanos</a>
+            </div>
+        </div>
+			
+			<a href="login.html">Iniciar Sesion </a>
+            <button id="ver-carrito">🛒 Carrito (<span id="contador-carrito">0</span>)</button>
+        </nav>
+    </header>
+	
+		<h1> Nuestros Productos</h1> <br><br><br>
+	
+		<div class="contenedor-productos">
+
+			<div class="card-producto">
+				<img src="../imagenes/500ml.jpeg" alt="...">
+				<h3>Yogurt de Kéfir 500ml</h3>
+				<p>Probiótico natural, sin conservantes.</p>
+				<span class="precio">Bs 20</span>
+				<button>Añadir al carrito</button>
+			</div>
+
+			<div class="card-producto">
+				<img src="../imagenes/1lt.jpg" alt="...">
+				<h3>Yogurt de Kéfir 1Lt.</h3>
+				<p>Mayor tamaño, mayor cuidado.</p>
+				<span class="precio">Bs 35</span>
+				<button>Añadir al carrito</button>
+			</div>
+			
+			<div class="card-producto">
+				<img src="../imagenes/6pack.jpg" alt="...">
+				<h3>Pack 6 bottellas de 500ml</h3>
+				<p>Para el cuidado de toda la familia</p>
+				<span class="precio">Bs 100</span>
+				<button>Añadir al carrito</button>
+			</div>
+			
+			<div class="card-producto">
+				<img src="../imagenes/granos.jpg" alt="Granos de Kéfir">
+				<h3>Granos de Kéfir</h3>
+				<p>Para preparar tu propio kéfir en casa.</p>
+				<span class="precio">Bs 80</span>
+				<button>Añadir al carrito</button>
+			</div>
+
+		</div>
+
+			<script src="../SCRIPTS/catalogo.js"></script>
+	</body>
+
+
+</html>

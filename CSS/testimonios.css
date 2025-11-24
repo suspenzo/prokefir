@@ -1,0 +1,115 @@
+/* Sección de testimonios */
+.testimonios-section {
+    width: 90%;
+    max-width: 1150px;
+    margin: 40px auto;
+}
+
+.titulo-testimonios {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Contenedor principal */
+.testimonios-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Carrusel */
+.testimonios-slide {
+    display: flex;
+    gap: 15px;
+    overflow: hidden;
+    width: calc(250px * 4 + 15px * 3); /* 4 tarjetas visibles + espacios */
+    transition: transform 0.5s ease;
+}
+
+/* Tarjetas */
+.testimonio-card {
+    width: 250px; /* ajusta según el tamaño de tus imágenes */
+    flex-shrink: 0; /* evita que las tarjetas se compriman al desplazar */
+    border-radius: 12px;
+    box-shadow: 0px 3px 8px rgba(0,0,0,0.2);
+}
+
+/* Flechas generales */
+.btn-flecha {
+    background-color: #00b46d;
+    color: white;
+    border: none;
+    font-size: 20px;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 5;
+}
+
+.btn-flecha:hover {
+    background-color: #008f59;
+}
+
+/* Flecha izquierda */
+.flecha-izq {
+    transform: rotate(180deg);
+    position: absolute;
+    left: -25px;
+    top: 50%;
+    transform: translateY(-50%) rotate(180deg);
+}
+
+/* Flecha derecha */
+.flecha-der {
+    position: absolute;
+    right: -25px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+/* FORMULARIO DE OPINIÓN */
+.testimonio-container {
+    width: 80%;
+    max-width: 700px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.testimonio-container h1 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.testimonio-container textarea {
+    width: 100%;
+    height: 200px;  /* Mayor altura */
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    resize: vertical; /* Permite ajustar verticalmente si quieres */
+    margin-bottom: 15px; /* Separación del botón */
+}
+
+.testimonio-container .btn-enviar {
+    display: block;
+    width: 200px;  /* Puedes ajustar */
+    margin: 0 auto; /* Centrado */
+    padding: 12px;
+    font-size: 16px;
+    background-color: #00b46d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.testimonio-container .btn-enviar:hover {
+    background-color: #008f59;
+}
+

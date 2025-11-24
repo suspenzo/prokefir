@@ -1,0 +1,97 @@
+/* --- UBICACIONES --- */
+.ubicaciones-section {
+    background: #f9f5ef;
+    padding: 40px 20px 60px;
+    text-align: center;
+}
+
+.ubicaciones-section h3 {
+    color: #2f542d;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.ubicaciones-section h2 {
+    color: #2f542d;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.ubicaciones-grid {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.ubicacion-item {
+    max-width: 180px;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+}
+
+.ubicacion-item img {
+    width: 30px;
+    margin-bottom: 10px;
+}
+
+/* --- FOOTER --- */
+.footer {
+    background: #315f36;
+    color: #f1f1e8;
+    padding: 60px 30px 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-column {
+    margin: 10px 20px;
+    min-width: 200px;
+}
+
+.footer-column h4 {
+    margin-bottom: 15px;
+    color: #f1f1e8;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+.footer-column a {
+    display: block;
+    color: #f1f1e8;
+    margin-bottom: 8px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+}
+
+.footer-logo img {
+    width: 300px;
+    margin-bottom: 15px;
+}
+
+.footer-social i {
+    font-size: 22px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* COPYRIGHT */
+.copyright {
+    text-align: center;
+    background: #f9f5ef;
+    padding: 12px;
+    color: #333;
+    font-size: 14px;
+}

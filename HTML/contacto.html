@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEFIR- Contacto</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .footer-contacto {
+            background: linear-gradient(135deg, #1a4d2e, #27694d);
+            color: white;
+            padding: 70px 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .contacto-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.25);
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contacto-title {
+            font-size: 2.8rem;
+            margin-bottom: 40px;
+            color: #a8e6cf;
+            text-shadow: 0 3px 10px rgba(0,0,0,0.5);
+            letter-spacing: 2px;
+            position: relative;
+        }
+
+        .contacto-title::after {
+            content: '';
+            width: 120px;
+            height: 4px;
+            background: #a8e6cf;
+            display: block;
+            margin: 20px auto 0;
+            border-radius: 2px;
+        }
+
+        .contacto-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .contacto-block h4 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #ffddd2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .contacto-block p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin: 12px 0;
+            padding: 0 20px;
+        }
+
+        .contacto-block strong {
+            color: #a8e6cf;
+            font-size: 1.1em;
+        }
+
+        .icon-big {
+            font-size: 2.2em;
+        }
+
+        .horarios {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+        }
+
+        .footer-final {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="footer-contacto">
+        <div class="contacto-container">
+            <h2 class="contacto-title">CONTÁCTANOS</h2>
+
+            <div class="contacto-grid">
+
+                <!-- Columna de Contacto Directo -->
+                <div class="contacto-block">
+                    <h4><span class="icon-big">☎️</span> CONTACTO</h4>
+                    <p><strong>Teléfono / WhatsApp:</strong><br>+591 63589655</p>
+                    <p><strong>Email:</strong><br>info@naturalfarma.bo</p>
+                </div>
+
+                <!-- Columna de Horarios -->
+                <div class="contacto-block horarios">
+                    <h4><span class="icon-big">⏰</span> HORARIOS DE ATENCIÓN</h4>
+                    <p><strong>Central:</strong><br>Lunes a Viernes 9:00 - 19:00<br>Sábados 9:00 - 14:00</strong></p>
+                    <p><strong>Equipetrol:</strong><br>Lun-Vie 9:00-13:00 | 15:00-19:00<br>Sábados 9:00 - 14:00</p>
+                    <p><strong>Doble Vía La Guardia:</strong><br>Lun-Vie 9:00-13:00 | 15:00-19:00<br>Sábados 9:00 - 14:00</p>
+                </div>
+
+            </div>
+
+            <div class="footer-final">
+                <p>🌿 <strong>KEFIR</strong> • Tu salud natural en Santa Cruz de la Sierra<br>
+                © 2025 Todos los derechos reservados • Con amor desde Bolivia 💚</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

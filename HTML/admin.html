@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro-Kefir - Panel Administrador</title>
+    
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="stylesheet" href="../CSS/estiloNauel.css">
+    <link rel="stylesheet" href="../CSS/responsivo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <style>
+        body { margin:0; padding:0; background:#111; font-family:Arial, sans-serif; height:100vh; }
+        .login-form {
+            position:absolute;
+            top:50%; left:50%;
+            transform:translate(-50%,-50%);
+            width:90%;
+            max-width:420px;
+            background:white;
+            padding:40px;
+            border-radius:15px;
+            box-shadow:0 15px 35px rgba(0,0,0,0.5);
+            text-align:center;
+        }
+        .form-title {
+            font-size:28px;
+            font-weight:bold;
+            margin-bottom:30px;
+            color:#e63946;
+        }
+        .form-input { margin-bottom:20px; text-align:left; }
+        label { display:block; margin-bottom:8px; color:#333; font-weight:bold; }
+        input[type="text"], input[type="password"] {
+            width:100%;
+            padding:12px;
+            border:2px solid #ddd;
+            border-radius:8px;
+            font-size:16px;
+            box-sizing:border-box;
+        }
+        input:focus { border-color:#e63946; outline:none; }
+
+        /* CAPTCHA sin mostrar el texto */
+        .captcha {
+            margin:25px 0;
+            padding:20px;
+            background:#f9f9f9;
+            border-radius:10px;
+            border:2px dashed #ccc;
+            text-align:center;
+        }
+        .captcha img {
+            width:200px;
+            height:60px;
+            border-radius:8px;
+            margin-bottom:15px;
+        }
+        .captcha-form {
+            display:flex;
+            gap:10px;
+        }
+        .captcha-form input { flex:1; }
+        .captcha-refresh {
+            background:#e63946;
+            color:white;
+            border:none;
+            width:50px;
+            border-radius:8px;
+            cursor:pointer;
+            font-size:18px;
+        }
+        .captcha-refresh:hover { background:#c1121f; }
+
+        #login-btn {
+            width:100%;
+            padding:14px;
+            background:#e63946;
+            color:white;
+            border:none;
+            border-radius:8px;
+            font-size:18px;
+            cursor:pointer;
+            margin-top:10px;
+        }
+        #login-btn:hover { background:#c1121f; }
+
+        #contenido-admin { display:none; background:#f4f4f4; min-height:100vh; }
+    </style>
+</head>
+<body>
+
+    <!-- LOGIN CON CAPTCHA OCULTO (imagen generada en canvas) -->
+    <div class="login-form">
+        <div class="form-title">Panel Administrador</div>
+        
+        <div class="form-input">
+            <label for="username">Usuario</label>
+            <input type="text" id="username" placeholder="Ej: EnzoAD" autocomplete="username">
+        </div>
+        
+        <div class="form-input">
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" placeholder="Contraseña" autocomplete="current-password">
+        </div>
+        
+        <div class="captcha">
+            <label>Verificación CAPTCHA</label>
+            <canvas id="captcha-canvas" width="200" height="60"></canvas>
+            <div class="captcha-form">
+                <input type="text" id="captcha-input" placeholder="Escribe el texto">
+                <button type="button" class="captcha-refresh" onclick="generarCaptcha()">
+                    <i class="fas fa-sync-alt"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="form-input">
+            <button id="login-btn" onclick="validarLogin()">Iniciar Sesión</button>
+        </div>
+    </div>
+
+    <!-- CONTENIDO ADMIN -->
+    <div id="contenido-admin">
+        <header>
+            <a href="INDEX.HTML"> <img src="../imagenes/logoheader.png" height="90px" alt="Logo"> </a>
+            <nav>
+                <a href="ventas.html">Ventas</a>
+                <a href="clientes.html">Clientes</a>
+                <a href="empleados.html">Empleados</a>
+                <a href="stock.html">Stock</a>
+                <a href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
+            </nav>
+        </header>
+        <h1 style="text-align:center; margin-top:50px;">Bienvenido Admin <span id="nombre-admin"></span></h1>
+    </div>
+
+    <script>
+        const usuarios = {
+            "EnzoAD": "1234",
+            "SaidAD": "5678",
+            "NahuelAD": "pass123"
+        };
+
+        let captchaActual = "";
+
+        function generarCaptcha() {
+            const canvas = document.getElementById("captcha-canvas");
+            const ctx = canvas.getContext("2d");
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Fondo con ruido
+            ctx.fillStyle = "#f0f0f0";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            for(let i = 0; i < 150; i++) {
+                ctx.fillStyle = `rgba(0,0,0,${Math.random()})`;
+                ctx.fillRect(Math.random()*200, Math.random()*60, 2, 2);
+            }
+
+            const caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            captchaActual = "";
+            let texto = "";
+            for(let i = 0; i < 6; i++) {
+                const char = caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+                texto += char;
+                captchaActual += char;
+            }
+
+            // Texto distorsionado
+            ctx.font = "38px Arial";
+            ctx.fillStyle = "#e63946";
+            ctx.textBaseline = "middle";
+            for(let i = 0; i < texto.length; i++) {
+                ctx.save();
+                ctx.translate(25 + i*30, 35);
+                ctx.rotate((Math.random() - 0.5) * 0.4);
+                ctx.fillText(texto[i], 0, 0);
+                ctx.restore();
+            }
+
+            // Líneas de interferencia
+            for(let i = 0; i < 5; i++) {
+                ctx.strokeStyle = `rgba(0,0,0,${Math.random()})`;
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                ctx.moveTo(Math.random()*200, Math.random()*60);
+                ctx.lineTo(Math.random()*200, Math.random()*60);
+                ctx.stroke();
+            }
+
+            document.getElementById("captcha-input").value = "";
+        }
+
+        function validarLogin() {
+            const user = document.getElementById("username").value.trim();
+            const pass = document.getElementById("password").value;
+            const captchaIngresado = document.getElementById("captcha-input").value.trim().toLowerCase();
+
+            if (!user || !pass || !captchaIngresado) {
+                swal("Error", "Todos los campos son obligatorios", "error");
+                return;
+            }
+
+            if (captchaIngresado !== captchaActual.toLowerCase()) {
+                swal("CAPTCHA incorrecto", "Intenta nuevamente", "error");
+                generarCaptcha();
+                return;
+            }
+
+            if (usuarios[user] && usuarios[user] === pass) {
+                document.querySelector(".login-form").style.display = "none";
+                document.getElementById("contenido-admin").style.display = "block";
+                document.getElementById("nombre-admin").textContent = user;
+                swal("Éxito", `Bienvenido ${user}!`, "success");
+            } else {
+                swal("Acceso denegado", "Usuario o contraseña incorrectos", "error");
+                generarCaptcha();
+            }
+        }
+
+        function cerrarSesion() {
+            document.querySelector(".login-form").style.display = "block";
+            document.getElementById("contenido-admin").style.display = "none";
+            document.getElementById("username").value = "";
+            document.getElementById("password").value = "";
+            document.getElementById("captcha-input").value = "";
+            generarCaptcha();
+        }
+
+        // Iniciar
+        window.onload = generarCaptcha;
+
+        document.addEventListener("keypress", e => {
+            if (e.key === "Enter" && document.querySelector(".login-form").style.display !== "none") {
+                validarLogin();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clientes Frecuentes - Kéfir Artesanal</title>
+  <style>
+    :root {
+      --verde: #558c03;
+      --amarillo: #dbff8e;
+      --blanco: #ffffff;
+      --gris: #f8f8f8;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #f0ffe6 0%, #e8f9e8 100%);
+      background-attachment: fixed;
+      min-height: 100vh;
+      padding: 100px 20px 60px;
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--verde);
+      font-size: 36px;
+      margin-bottom: 50px;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .clientes-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 35px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .cliente-card {
+      width: 380px;
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+      border: 6px solid var(--verde);
+      transition: transform 0.3s;
+    }
+
+    .cliente-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .header-card {
+      background: var(--verde);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .header-card h3 {
+      font-size: 26px;
+      margin-bottom: 5px;
+    }
+
+    .header-card p {
+      font-size: 15px;
+      opacity: 0.9;
+    }
+
+    .compras {
+      padding: 25px;
+      background: var(--amarillo);
+      min-height: 220px;
+    }
+
+    .compras ul {
+      list-style: none;
+      font-size: 16px;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    .compras li {
+      margin: 8px 0;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .compras li::before {
+      content: "✓";
+      color: var(--verde);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+
+    .total {
+      background: var(--verde);
+      color: white;
+      text-align: center;
+      padding: 18px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>NUESTROS CLIENTES FRECUENTES</h1>
+
+  <div class="clientes-grid">
+
+    <!-- Cliente 1 -->
+    <div class="cliente-card">
+      <div class="header-card">
+        <h3>María Laura Rojas</h3>
+        <p>Cliente desde 2023</p>
+      </div>
+      <div class="compras">
+        <ul>
+          <li>Yogurt de Kéfir 1Lt × 3</li>
+          <li>Pack 6 botellas 500ml × 1</li>
+          <li>Gramos de Kéfir × 1</li>
+        </ul>
+      </div>
+      <div class="total">Total pagado: 265 Bs</div>
+    </div>
+
+    <!-- Cliente 2 -->
+    <div class="cliente-card">
+      <div class="header-card">
+        <h3>Juan Carlos Méndez</h3>
+        <p>Cliente desde 2024</p>
+      </div>
+      <div class="compras">
+        <ul>
+          <li>Yogurt de Kéfir 500ml × 8</li>
+          <li>Pack 6 botellas 500ml × 2</li>
+        </ul>
+      </div>
+      <div class="total">Total pagado: 360 Bs</div>
+    </div>
+
+    <!-- Cliente 3 -->
+    <div class="cliente-card">
+      <div class="header-card">
+        <h3>Valeria Sánchez</h3>
+        <p>Cliente desde 2023</p>
+      </div>
+      <div class="compras">
+        <ul>
+          <li>Gramos de Kéfir × 3</li>
+          <li>Yogurt de Kéfir 1Lt × 2</li>
+        </ul>
+      </div>
+      <div class="total">Total pagado: 310 Bs</div>
+    </div>
+
+    <!-- Cliente 4 -->
+    <div class="cliente-card">
+      <div class="header-card">
+        <h3>Pedro Aguilar</h3>
+        <p>Cliente desde 2025</p>
+      </div>
+      <div class="compras">
+        <ul>
+          <li>Pack 6 botellas 500ml × 3</li>
+          <li>Yogurt de Kéfir 500ml × 4</li>
+        </ul>
+      </div>
+      <div class="total">Total pagado: 380 Bs</div>
+    </div>
+
+    <!-- Cliente 5 -->
+    <div class="cliente-card">
+      <div class="header-card">
+        <h3>Ana Patricia Vargas</h3>
+        <p>Cliente desde 2024</p>
+      </div>
+      <div class="compras">
+        <ul>
+          <li>Yogurt de Kéfir 1Lt × 5</li>
+          <li>Gramos de Kéfir × 1</li>
+        </ul>
+      </div>
+      <div class="total">Total pagado: 255 Bs</div>
+    </div>
+
+    <!-- Cliente 6 -->
+    <div class="cliente-card">
+      <div class="header-card">
+        <h3>Familia Gutiérrez</h3>
+        <p>Cliente desde 2023</p>
+      </div>
+      <div class="compras">
+        <ul>
+          <li>Pack 6 botellas 500ml × 5</li>
+          <li>Yogurt de Kéfir 500ml × 6</li>
+          <li>Gramos de Kéfir × 2</li>
+        </ul>
+      </div>
+      <div class="total">Total pagado: 780 Bs</div>
+    </div>
+
+  </div>
+
+</body>
+</html>

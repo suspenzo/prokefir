@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro-Kefir - Testimonios</title>
+
+    <!-- Tus CSS externos -->
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="stylesheet" href="../CSS/estiloNauel.css">
+    <link rel="stylesheet" href="../CSS/testimonios.css"> <!-- CREA ESTE ARCHIVO PARA EL CARRUSEL -->
+</head>
+
+<body>
+
+<header>
+    <a href="INDEX.HTML"><img src="../imagenes/logoheader.png" height="90px"></a>
+    <nav>
+        <a href="catalogo.html">Productos</a>
+
+        <div class="dropdown">
+            <a class="dropbtn">Sobre Nosotros</a>
+            <div class="dropdown-content">
+                <a href="aboutusN.html">¿Quienes somos?</a>
+                <a href="testimonio.html">Testimonios</a>
+                <a href="contacto.html">Contáctanos</a>
+            </div>
+        </div>
+
+        <a href="login.html">Iniciar Sesion</a>
+        <button id="ver-carrito">🛒 Carrito (<span id="contador-carrito">0</span>)</button>
+    </nav>
+</header>
+
+<!-- FORMULARIO DE OPINIÓN -->
+<div class="testimonio-container">
+    <h1>¡Déjanos saber tu opinión sobre nosotros!</h1>
+
+    <textarea id="opinion" placeholder="Escribe aquí tu opinión..."></textarea>
+
+    <button class="btn-enviar" onclick="enviarOpinion()">Enviar opinión</button>
+    <a href="estrellas.html">calificacion</a>
+</div>
+
+
+<!-- SECCIÓN DE TESTIMONIOS -->
+<section class="testimonios-section">
+    <h2 class="titulo-testimonios">Testimonios y reseñas</h2>
+
+    <div class="testimonios-container">
+
+        <!-- Carrusel -->
+        <div id="testimonios-slide" class="testimonios-slide">
+
+            <!-- Solo las 4 imágenes visibles, sin flechas -->
+            <img src="../imagenes/testimonio1.png" class="testimonio-card">
+            <img src="../imagenes/testimonio2.png" class="testimonio-card">
+            <img src="../imagenes/testimonio3.png" class="testimonio-card">
+            <img src="../imagenes/testimonio4.png" class="testimonio-card">
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Script para enviar opinión -->
+<script>
+function enviarOpinion() {
+    const opinion = document.getElementById('opinion').value;
+    if(opinion.trim() !== '') {
+        alert("Su opinión fue enviada. Gracias por confiar en nosotros.");
+        document.getElementById('opinion').value = ''; // Limpiar textarea
+    } else {
+        alert("Por favor escribe tu opinión antes de enviar.");
+    }
+}
+</script>
+
+</body>
+</html>

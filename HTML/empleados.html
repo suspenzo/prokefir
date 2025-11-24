@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equipo Kéfir Artesanal</title>
+  <style>
+    :root {
+      --verde: #558c03;
+      --amarillo: #dbff8e;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #f5ffe8 0%, #e8f9e8 100%);
+      background-attachment: fixed;
+      min-height: 100vh;
+      padding: 80px 20px 40px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 40mm;                     /* 4 cm exactos */
+    }
+
+    h1 {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: var(--verde);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 28px;
+      z-index: 1000;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    /* CARNET - tamaño real */
+    .carnet {
+      width: 400px;
+      height: 630px;
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.22);
+      border: 10px solid var(--verde);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      background: var(--verde);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .header img {
+      width: 85px;
+      height: 85px;
+      border-radius: 50%;
+      border: 5px solid var(--amarillo);
+      object-fit: cover;
+    }
+
+    .header h2 { font-size: 24px; margin: 10px 0 4px; }
+    .header p  { font-size: 13px; opacity: 0.9; }
+
+    /* FOTO 9 × 9 cm REALES */
+    .photo {
+      width: 260px;      /* = 9 cm a 300 dpi */
+      height: 260px;     /* = 9 cm a 300 dpi */
+      margin: 25px auto 20px;
+      border: 8px solid var(--verde);
+      border-radius: 18px;
+      background-size: cover;
+      background-position: center top;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    }
+
+    .info {
+      background: var(--amarillo);
+      padding: 25px 20px;
+      text-align: center;
+      flex-grow: 1;
+      color: #333;
+    }
+
+    .name {
+      font-size: 38px;
+      font-weight: bold;
+      color: var(--verde);
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+
+    .position {
+      font-size: 20px;
+      margin-bottom: 18px;
+      color: #444;
+    }
+
+    .details {
+      background: rgba(255,255,255,0.85);
+      padding: 16px;
+      border-radius: 14px;
+      font-size: 16px;
+      line-height: 1.9;
+      font-weight: 600;
+    }
+
+    .footer {
+      background: var(--verde);
+      color: white;
+      text-align: center;
+      padding: 16px;
+      font-size: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>EQUIPO KÉFIR ARTESANAL</h1>
+
+  <!-- SAID - foto 9x9 -->
+  <div class="carnet">
+    <div class="header">
+      <h2>KÉFIR ARTESANAL</h2>
+      <p>Salud desde la naturaleza</p>
+    </div>
+    <div class="photo" style="background-image:url('imagenes/said.jpg')"></div>
+    <div class="info">
+      <div class="name">SAID</div>
+      <div class="position">Producción y Empaque</div>
+      <div class="details">
+        ID : KF-001<br>
+        Nac. : 12/05/2004<br>
+        Tel : (+591) 7654-3210
+      </div>
+    </div>
+    <div class="footer">TRABAJADOR OFICIAL 2025</div>
+  </div>
+
+  <!-- NAHUEL - foto 9x9 -->
+  <div class="carnet">
+    <div class="header">
+      <h2>KÉFIR ARTESANAL</h2>
+      <p>Salud desde la naturaleza</p>
+    </div>
+    <div class="photo" style="background-image:url('imagenes/nahuel.jpg')"></div>
+    <div class="info">
+      <div class="name">NAHUEL</div>
+      <div class="position">Control de Calidad</div>
+      <div class="details">
+        ID : KF-002<br>
+        Nac. : 03/09/2004<br>
+        Tel : (+591) 7234-5678
+      </div>
+    </div>
+    <div class="footer">TRABAJADOR OFICIAL 2025</div>
+  </div>
+
+  <!-- ENZO - foto 9x9 -->
+  <div class="carnet">
+    <div class="header">
+      <h2>KÉFIR ARTESANAL</h2>
+      <p>Salud desde la naturaleza</p>
+    </div>
+    <div class="photo" style="background-image:url('imagenes/enzo.jpg')"></div>
+    <div class="info">
+      <div class="name">ENZO</div>
+      <div class="position">Logística y Distribución</div>
+      <div class="details">
+        ID : KF-003<br>
+        Nac. : 19/02/2004<br>
+        Tel : (+591) 7987-6543
+      </div>
+    </div>
+    <div class="footer">TRABAJADOR OFICIAL 2025</div>
+  </div>
+
+</body>
+</html>
