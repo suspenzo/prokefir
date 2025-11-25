@@ -90,7 +90,190 @@
   </marquee>
 </footer>
 
+
+
+
     <script src="SCRIPTS/carrusel.js"></script>
     <script src="SCRIPTS/temas.js"></script>
+	
+	<!-- POPUP DEL JUEGO -->
+<div id="popup-letra" style="
+    display:none;
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    text-align: center;
+    z-index: 9999;
+">
+    <h2 id="popup-texto"></h2>
+    <button onclick="cerrarPopup()" style="
+        margin-top: 15px;
+        padding: 10px 20px;
+        border: none;
+        background: #46a149;
+        color: white;
+        border-radius: 8px;
+        cursor:pointer;">
+        OK
+    </button>
+</div>
+
+
+	<script>
+const FRASE = "ILOVEKEFIR"; // sin espacios para simplificar
+
+// Cargar progreso del usuario
+let letrasGuardadas = JSON.parse(localStorage.getItem("letras_kefir")) || [];
+
+// Mostrar popup con letra al cargar
+window.onload = function () {
+    mostrarPopupConLetra();
+};
+
+function mostrarPopupConLetra() {
+    // Si ya ganó antes
+    if (haCompletadoFrase()) {
+        mostrarPopup("🎉 ¡Felicidades! Ya completaste 'I LOVE KEFIR' y ganaste un premio 🎁");
+        return;
+    }
+
+    // Elegir una letra aleatoria que aún no tenga
+    const letrasFaltantes = FRASE.split("").filter(l => !letrasGuardadas.includes(l));
+    const letra = letrasFaltantes[Math.floor(Math.random() * letrasFaltantes.length)];
+
+    // Guardar progreso
+    letrasGuardadas.push(letra);
+    localStorage.setItem("letras_kefir", JSON.stringify(letrasGuardadas));
+
+    mostrarPopup("Completa 'I love Kefir' para llevarte una . <br> Has obtenido la letra: <br><br><strong style='font-size:40px'>" + letra + "</strong>");
+
+    // Si completó la frase después de esta letra
+    setTimeout(() => {
+        if (haCompletadoFrase()) {
+            setTimeout(() => {
+                mostrarPopup("🎉 ¡Completaste 'I LOVE KEFIR'! Has ganado un premio 🎁");
+            }, 800);
+        }
+    }, 800);
+}
+
+function haCompletadoFrase() {
+    return FRASE.split("").every(l => letrasGuardadas.includes(l));
+}
+
+function mostrarPopup(mensaje) {
+    document.getElementById("popup-texto").innerHTML = mensaje;
+    document.getElementById("popup-letra").style.display = "block";
+}
+
+function cerrarPopup() {
+    document.getElementById("popup-letra").style.display = "none";
+}
+</script>
+
+	
+<!-- Botón flotante para abrir el chat -->
+<div id="chat-icon" style="
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #46a149;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+">
+    <img src="https://cdn-icons-png.flaticon.com/512/134/134914.png" width="30">
+</div>
+
+<!-- Contenedor del chat -->
+<div id="chatbox" style="
+    display: none;
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 320px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 9999;
+    padding: 15px;
+">
+    <h3 style="margin-top:0; color:#46a149;">Asistente Pro-Kefir 🥛</h3>
+
+    <label for="preguntas">Selecciona una pregunta:</label>
+    <select id="preguntas" style="
+        width:100%; 
+        margin-top:10px; 
+        padding:8px; 
+        border-radius:5px; 
+        border:1px solid #ccc;">
+        <option value="">-- Escoge una opción --</option>
+        <option value="consumo">¿Cuánto kéfir debería consumir al día?</option>
+        <option value="pedidos">¿Dónde puedo realizar mis pedidos?</option>
+        <option value="beneficios">¿Por qué debería consumir kéfir?</option>
+        <option value="caro">¿Es caro?</option>
+    </select>
+
+    <div id="respuesta" style="
+        margin-top:15px; 
+        padding:10px; 
+        background:#f4f4f4; 
+        border-radius:5px; 
+        display:none;">
+    </div>
+</div>
+
+<script>
+// Mostrar/ocultar chat
+document.getElementById("chat-icon").onclick = function () {
+    let chat = document.getElementById("chatbox");
+    chat.style.display = chat.style.display === "none" ? "block" : "none";
+};
+
+// Respuestas
+document.getElementById("preguntas").onchange = function () {
+    let valor = this.value;
+    let respuesta = document.getElementById("respuesta");
+    respuesta.style.display = "block";
+
+    if (valor === "consumo") {
+        respuesta.innerHTML = 
+            "La cantidad recomendada es entre <strong>100 ml y 200 ml al día</strong>. "+
+            "Si eres nuevo consumiendo kéfir, comienza con menos cantidad para que tu cuerpo se adapte.";
+    }
+
+    if (valor === "pedidos") {
+        respuesta.innerHTML = 
+            "Puedes realizar tus pedidos vía WhatsApp al siguiente número: <br><br>" +
+            "<a href='https://wa.me/59160953727' target='_blank' style='color:#46a149; font-weight:bold;'>📲 60953727</a>";
+    }
+
+    if (valor === "beneficios") {
+        respuesta.innerHTML = 
+            "Puedes ver todos los beneficios del kéfir haciendo clic aquí:<br><br>" +
+            "<a href='HTML/beneficios.html' style='color:#46a149; font-weight:bold;'>👉 Ver beneficios</a>";
+    }
+
+    if (valor === "caro") {
+        respuesta.innerHTML = 
+            "¡Para nada! Tenemos los <strong>precios más económicos del mercado</strong>.<br><br>" +
+            "Puedes ver nuestros precios aquí:<br><br>" +
+            "<a href='HTML/catalogo.html' style='color:#46a149; font-weight:bold;'>🛍️ Ver catálogo</a>";
+    }
+};
+</script>
+
+
+	
 </body>
 </html>
