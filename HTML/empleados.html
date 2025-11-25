@@ -4,134 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Equipo Kéfir Artesanal</title>
-  <style>
-    :root {
-      --verde: #558c03;
-      --amarillo: #dbff8e;
-    }
+        <link rel="stylesheet" href="../CSS/styles.css">
 
-    * { margin:0; padding:0; box-sizing:border-box; }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(135deg, #f5ffe8 0%, #e8f9e8 100%);
-      background-attachment: fixed;
-      min-height: 100vh;
-      padding: 80px 20px 40px;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 40mm;                     /* 4 cm exactos */
-    }
-
-    h1 {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      background: var(--verde);
-      color: white;
-      text-align: center;
-      padding: 20px;
-      font-size: 28px;
-      z-index: 1000;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    }
-
-    /* CARNET - tamaño real */
-    .carnet {
-      width: 400px;
-      height: 630px;
-      background: white;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.22);
-      border: 10px solid var(--verde);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .header {
-      background: var(--verde);
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .header img {
-      width: 85px;
-      height: 85px;
-      border-radius: 50%;
-      border: 5px solid var(--amarillo);
-      object-fit: cover;
-    }
-
-    .header h2 { font-size: 24px; margin: 10px 0 4px; }
-    .header p  { font-size: 13px; opacity: 0.9; }
-
-    /* FOTO 9 × 9 cm REALES */
-    .photo {
-      width: 260px;      /* = 9 cm a 300 dpi */
-      height: 260px;     /* = 9 cm a 300 dpi */
-      margin: 25px auto 20px;
-      border: 8px solid var(--verde);
-      border-radius: 18px;
-      background-size: cover;
-      background-position: center top;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.3);
-    }
-
-    .info {
-      background: var(--amarillo);
-      padding: 25px 20px;
-      text-align: center;
-      flex-grow: 1;
-      color: #333;
-    }
-
-    .name {
-      font-size: 38px;
-      font-weight: bold;
-      color: var(--verde);
-      margin-bottom: 8px;
-      letter-spacing: 1px;
-    }
-
-    .position {
-      font-size: 20px;
-      margin-bottom: 18px;
-      color: #444;
-    }
-
-    .details {
-      background: rgba(255,255,255,0.85);
-      padding: 16px;
-      border-radius: 14px;
-      font-size: 16px;
-      line-height: 1.9;
-      font-weight: 600;
-    }
-
-    .footer {
-      background: var(--verde);
-      color: white;
-      text-align: center;
-      padding: 16px;
-      font-size: 15px;
-      font-weight: bold;
-    }
-  </style>
 </head>
 <body>
+<header class="header-principal">
 
+		 <a href="../index.html"> <img src="../imagenes/logoheader.png" height= 90px> </a>
+        <nav>
+            <a href="ventas.html">Ventas</a>
+			<a href="clientes.html">Clientes</a>
+			<a href="empleados.html">Empleados</a>
+			<a href="index.html">Cerrar Sesion </a>
+        </nav>
+    </header>
   <h1>EQUIPO KÉFIR ARTESANAL</h1>
 
   <!-- SAID - foto 9x9 -->
+  <div class="carnet-container">
   <div class="carnet">
     <div class="header">
       <h2>KÉFIR ARTESANAL</h2>
-      <p>Salud desde la naturaleza</p>
+      <p style:>Salud desde la naturaleza</p>
     </div>
-    <div class="photo" style="background-image:url('imagenes/said.jpg')"></div>
+     <div style="width: 9cm; height: 9cm; overflow: hidden;">
+    <img src="../imagenes/SAID.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+</div>
     <div class="info">
       <div class="name">SAID</div>
       <div class="position">Producción y Empaque</div>
@@ -150,7 +48,10 @@
       <h2>KÉFIR ARTESANAL</h2>
       <p>Salud desde la naturaleza</p>
     </div>
-    <div class="photo" style="background-image:url('imagenes/nahuel.jpg')"></div>
+   <div style="width: 9cm; height: 9cm; overflow: hidden;">
+    <img src="../imagenes/NAHUEL.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+</div>
+
     <div class="info">
       <div class="name">NAHUEL</div>
       <div class="position">Control de Calidad</div>
@@ -169,7 +70,9 @@
       <h2>KÉFIR ARTESANAL</h2>
       <p>Salud desde la naturaleza</p>
     </div>
-    <div class="photo" style="background-image:url('imagenes/enzo.jpg')"></div>
+    <div style="width: 9cm; height: 9cm; overflow: hidden;">
+    <img src="../imagenes/ENZO.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+</div>
     <div class="info">
       <div class="name">ENZO</div>
       <div class="position">Logística y Distribución</div>
@@ -181,6 +84,6 @@
     </div>
     <div class="footer">TRABAJADOR OFICIAL 2025</div>
   </div>
-
+</div>
 </body>
 </html>

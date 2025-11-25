@@ -7,15 +7,41 @@
     <link rel="stylesheet" href="../CSS/styles.css">
 </head>
 <body>
-    <header>
-		<a href = "INDEX.HTML"> <img src="../imagenes/logoheader.png" height= 90px> </a>
+
+<header class="header-principal">
+		<a href = "../index.html"> <img src="../imagenes/logoheader.png" height= 90px> </a>
         <nav>
+            <a href="catalogo.html">Productos</a>
+            <!--<a href="#beneficios">Beneficios</a> -->
+			
+			<div class="dropdown">
+            <a class="dropbtn">Sobre Nosotros</a>
+
+            <div class="dropdown-content">
+                <a href="aboutusN.html">¿Quienes somos?</a>
+                <a href="testimonio.html">Testimonios</a>
+                <a href="contacto.html">Contáctanos</a>
+            </div>
+        </div>
+			
+			<a href="admin.html">ADMIN</a>
+			<button id="toggle-theme">Cambiar Tema</button>
+            <button id="ver-carrito">🛒 Carrito (<span id="contador-carrito">0</span>)</button>
+        </nav>
+
+        
+
+    </header>
+	
+	<header class="header-secundario">
+		<nav>
             <a href="#beneficios">Beneficios</a>
             <a href="#propiedades">Propiedades</a>
             <a href="#ingredientes">Ingredientes</a>
             <a href="#calorias">Calorías</a>
         </nav>
-    </header>
+	</header>
+
 
     <main>
         <!-- Hero Section -->
@@ -183,11 +209,11 @@
         </section>
     </main>
 
-    <footer>
-        <h4>Kéfir - Elixir de Salud Natural</h4>
-        <p>Descubre los beneficios de este alimento probiótico milenario para tu bienestar digestivo e inmunológico.</p>
-        <p style="margin-top: 15px;">&copy; 2024 - Todos los derechos reservados</p>
-    </footer>
+  <footer class="footer-marquesina">
+  <marquee behavior="scroll" direction="left">
+    © 2025 Todos los derechos reservados – Pro-Kefir. Página diseñada por el Equipo 2
+  </marquee>
+</footer>
 
     <script>
         // Función para scroll suave a las secciones
@@ -208,5 +234,9 @@
             });
         });
     </script>
+				    <script src="../SCRIPTS/temas.js"></script>
+
+	
+
 </body>
 </html>

@@ -12,25 +12,30 @@
 </head>
 
 <body>
-
-<header>
-    <a href="INDEX.HTML"><img src="../imagenes/logoheader.png" height="90px"></a>
-    <nav>
-        <a href="catalogo.html">Productos</a>
-
-        <div class="dropdown">
+<header class="header-principal">
+		<a href = "../index.html"> <img src="../imagenes/logoheader.png" height= 90px> </a>
+        <nav>
+            <a href="catalogo.html">Productos</a>
+            <!--<a href="#beneficios">Beneficios</a> -->
+			
+			<div class="dropdown">
             <a class="dropbtn">Sobre Nosotros</a>
+
             <div class="dropdown-content">
-                <a href="aboutusN.html">Â¿Quienes somos?</a>
+                <a href="aboutusN.html">?Quienes somos?</a>
                 <a href="testimonio.html">Testimonios</a>
-                <a href="contacto.html">ContÃ¡ctanos</a>
+                <a href="contacto.html">Cont¨¢ctanos</a>
             </div>
         </div>
+			
+			<a href="admin.html">ADMIN</a>
+			<button id="toggle-theme">Cambiar Tema</button>
+            <button id="ver-carrito">?? Carrito (<span id="contador-carrito">0</span>)</button>
+        </nav>
 
-        <a href="login.html">Iniciar Sesion</a>
-        <button id="ver-carrito">ðŸ›’ Carrito (<span id="contador-carrito">0</span>)</button>
-    </nav>
-</header>
+        
+
+    </header>
 
 <!-- FORMULARIO DE OPINIÃ“N -->
 <div class="testimonio-container">
@@ -46,8 +51,9 @@
 <!-- SECCIÃ“N DE TESTIMONIOS -->
 <section class="testimonios-section">
     <h2 class="titulo-testimonios">Testimonios y reseÃ±as</h2>
-
+      
     <div class="testimonios-container">
+       
 
         <!-- Carrusel -->
         <div id="testimonios-slide" class="testimonios-slide">
@@ -75,6 +81,15 @@ function enviarOpinion() {
     }
 }
 </script>
+<footer class="footer-marquesina">
+  <marquee behavior="scroll" direction="left">
+    ? 2025 Todos los derechos reservados ¨C Pro-Kefir. P¨¢gina dise?ada por el Equipo 2
+  </marquee>
+
+</footer>
+
+
+ <script src="../SCRIPTS/temas.js"></script>
 
 </body>
 </html>

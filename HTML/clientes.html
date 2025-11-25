@@ -4,23 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Clientes Frecuentes - Kéfir Artesanal</title>
+      <link rel="stylesheet" href="../CSS/styles.css">
+
   <style>
-    :root {
-      --verde: #558c03;
-      --amarillo: #dbff8e;
-      --blanco: #ffffff;
-      --gris: #f8f8f8;
-    }
-
-    * { margin:0; padding:0; box-sizing:border-box; }
-
-    body {
-      font-family: 'Arial', sans-serif;
-      background: linear-gradient(135deg, #f0ffe6 0%, #e8f9e8 100%);
-      background-attachment: fixed;
-      min-height: 100vh;
-      padding: 100px 20px 60px;
-    }
 
     h1 {
       text-align: center;
@@ -37,16 +23,18 @@
       gap: 35px;
       max-width: 1400px;
       margin: 0 auto;
+	  
     }
 
     .cliente-card {
       width: 380px;
-      background: white;
+      background: #558c03;
       border-radius: 20px;
       overflow: hidden;
       box-shadow: 0 12px 30px rgba(0,0,0,0.18);
       border: 6px solid var(--verde);
       transition: transform 0.3s;
+	  
     }
 
     .cliente-card:hover {
@@ -62,6 +50,7 @@
 
     .header-card h3 {
       font-size: 26px;
+	  color: white;
       margin-bottom: 5px;
     }
 
@@ -80,7 +69,7 @@
       list-style: none;
       font-size: 16px;
       line-height: 1.8;
-      color: #333;
+      color: white;
     }
 
     .compras li {
@@ -91,7 +80,7 @@
 
     .compras li::before {
       content: "✓";
-      color: var(--verde);
+      color: white;
       font-weight: bold;
       position: absolute;
       left: 0;
@@ -108,7 +97,17 @@
   </style>
 </head>
 <body>
+	<header class="header-principal">
 
+		 <a href="../index.html"> <img src="../imagenes/logoheader.png" height= 90px> </a>
+        <nav>
+            <a href="ventas.html">Ventas</a>
+			<a href="clientes.html">Clientes</a>
+			<a href="empleados.html">Empleados</a>
+			<a href="index.html">Cerrar Sesion </a>
+        </nav>
+    </header>
+	
   <h1>NUESTROS CLIENTES FRECUENTES</h1>
 
   <div class="clientes-grid">

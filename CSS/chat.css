@@ -1,0 +1,54 @@
+/* Pantalla de bienvenida */
+.overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.caja-bienvenida {
+    background: white;
+    padding: 30px 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    max-width: 90%;
+}
+
+.caja-bienvenida h2 {
+    margin: 0 0 20px 0;
+    color: #2ecc71;
+    font-size: 28px;
+}
+
+.caja-bienvenida input {
+    width: 100%;
+    padding: 12px;
+    margin: 15px 0;
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+.caja-bienvenida button {
+    padding: 12px 30px;
+    background: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.caja-bienvenida button:hover {
+    background: #27ae60;
+}
+
+.caja-bienvenida small {
+    display: block;
+    margin-top: 15px;
+    color: #777;
+}

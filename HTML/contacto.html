@@ -4,15 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KEFIR- Contacto</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+	    <link rel="stylesheet" href="../CSS/styles.css">
 
+    <style>
+        
         .footer-contacto {
-            background: linear-gradient(135deg, #1a4d2e, #27694d);
             color: white;
             padding: 70px 20px;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -22,7 +18,7 @@
             max-width: 1100px;
             margin: 0 auto;
             text-align: center;
-            background: rgba(0, 0, 0, 0.25);
+            background: linear-gradient(135deg, #1a4d2e, #27694d);
             padding: 50px 40px;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
@@ -99,6 +95,31 @@
 </head>
 <body>
 
+	<header class="header-principal">
+		<a href = "../index.html"> <img src="../imagenes/logoheader.png" height= 90px> </a>
+        <nav>
+            <a href="catalogo.html">Productos</a>
+            <!--<a href="#beneficios">Beneficios</a> -->
+			
+			<div class="dropdown">
+            <a class="dropbtn">Sobre Nosotros</a>
+
+            <div class="dropdown-content">
+                <a href="aboutusN.html">¿Quienes somos?</a>
+                <a href="testimonio.html">Testimonios</a>
+                <a href="contacto.html">Contáctanos</a>
+            </div>
+        </div>
+			
+			<a href="admin.html">ADMIN</a>
+			<button id="toggle-theme">Cambiar Tema</button>
+            <button id="ver-carrito">🛒 Carrito (<span id="contador-carrito">0</span>)</button>
+        </nav>
+
+        
+
+    </header>
+
     <section class="footer-contacto">
         <div class="contacto-container">
             <h2 class="contacto-title">CONTÁCTANOS</h2>
@@ -128,6 +149,15 @@
             </div>
         </div>
     </section>
+<footer class="footer-marquesina">
+  <marquee behavior="scroll" direction="left">
+    © 2025 Todos los derechos reservados – Pro-Kefir. Página diseñada por el Equipo 2
+  </marquee>
+
+</footer>
+
+
+ <script src="../SCRIPTS/temas.js"></script>
 
 </body>
 </html>

@@ -1,5 +1,9 @@
-<html>
-	<head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro-Kefir - Tu Tienda Online</title>
 	
 	    <link rel="stylesheet" href="../CSS/styles.css">
 
@@ -7,10 +11,10 @@
 	
 	<body>
 	
-		<header>
-		<a href = "INDEX.HTML"> <img src="../imagenes/logoheader.png" height= 90px> </a>
+		<header class="header-principal">
+		<a href = "../index.html"> <img src="../imagenes/logoheader.png" height= 90px> </a>
         <nav>
-            <a href="catalogo.html">Productos</a>
+            <a href="HTML/catalogo.html">Productos</a>
             <!--<a href="#beneficios">Beneficios</a> -->
 			
 			<div class="dropdown">
@@ -23,12 +27,19 @@
             </div>
         </div>
 			
-			<a href="login.html">Iniciar Sesion </a>
+			<a href="admin.html">ADMIN</a>
             <button id="ver-carrito">🛒 Carrito (<span id="contador-carrito">0</span>)</button>
         </nav>
+
+        <div class="dropdown">
+            <button class="dropbtn">Cambiar tema</button>
+              <div class="dropdown-content">
+                <a href="#" onclick="cambiarTema('claro')">Claro</a>
+                <a href="#" onclick="cambiarTema('oscuro')">Oscuro</a>
+        </div>
     </header>
 	
-		<h1> Nuestros Productos</h1> <br><br><br>
+		<h1> Nuestros Productos</h1> 
 	
 		<div class="contenedor-productos">
 
@@ -65,8 +76,14 @@
 			</div>
 
 		</div>
-
+<footer class="footer-marquesina">
+  <marquee behavior="scroll" direction="left">
+    © 2025 Todos los derechos reservados – Pro-Kefir. Página diseñada por el Equipo 2
+  </marquee>
+</footer>
 			<script src="../SCRIPTS/catalogo.js"></script>
+			    <script src="../SCRIPTS/temas.js"></script>
+
 	</body>
 
 

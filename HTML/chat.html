@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot del Kéfir 🤍</title>
+    <link rel="stylesheet" href="../CSS/chat.css">
+</head>
+<body>
+
+    <!-- Pantalla de bienvenida (se muestra al inicio) -->
+    <div id="Bienvenida" class="overlay">
+        <div class="caja-bienvenida">
+            <h2>🥛 Chat del Kéfir 🥛</h2>
+            <p>¡Hola! Antes de empezar, ¿cómo te llamas?</p>
+            <input type="text" id="InputNombre" placeholder="Escribe tu nombre aquí" autocomplete="off">
+            <button onclick="iniciarChat()">Entrar al chat</button>
+            <small>(El nombre es obligatorio para chatear)</small>
+        </div>
+    </div>
+
+    <!-- Chat real (está oculto hasta que ponga el nombre) -->
+    <div id="ChatPrincipal" style="display: none;">
+        <h1>Chatbot del Kéfir 🤍</h1>
+        <div id="NombreMostrado"></div>
+
+        <div id="Contenedor">
+            <div id="Mensajes">
+                <!-- Los mensajes aparecerán aquí -->
+            </div>
+            <div id="Entrada">
+                <input type="text" id="Mensaje" placeholder="Escribe tu duda sobre el kéfir..." 
+                       onkeypress="if(event.key==='Enter') EnviaMensaje()" disabled>
+                <button onclick="EnviaMensaje()" disabled>ENVIAR</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../SCRIPTS/chat.js"></script>
+</body>
+</html>

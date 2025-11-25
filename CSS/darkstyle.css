@@ -1,0 +1,142 @@
+/* 🌙 MODO OSCURO ACTIVADO CON <body class="dark"> */
+body.dark {
+    --color-principal: #7dd35c;   /* Verde Kéfir iluminado */
+    --color-secundario: #a8ff70;  /* Amarillo suave */
+    --color-fondo: #121212;
+    --color-texto: #e4e4e4;
+    --color-blanco: #1e1e1e;
+    background: #0d0d0d !important;
+    color: var(--color-texto);
+}
+
+/* Fondo general */
+body.dark {
+    background-image: none !important;
+}
+
+/* Encabezados */
+body.dark .header-principal {
+    background: #1b1f18;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.7);
+}
+
+body.dark .header-secundario {
+    background: #1a2c10;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+body.dark h1,
+body.dark h2,
+body.dark h3 {
+    color: var(--color-secundario);
+}
+
+/* Carrusel */
+body.dark .cardcarousel {
+    background: #1d1d1d;
+    color: var(--color-texto);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+body.dark .cardcarousel.active {
+    background: #293d1a;
+}
+
+/* Productos */
+body.dark .card-producto {
+    background: #1c1c1c;
+    color: var(--color-texto);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+body.dark .precio {
+    color: var(--color-secundario);
+}
+
+body.dark .card-producto button {
+    background: #345e1f;
+}
+
+body.dark .card-producto button:hover {
+    background: #2b4d1a;
+}
+
+/* Sección Beneficios */
+body.dark .beneficios {
+    background: #1a1a1a;
+}
+
+body.dark .beneficios li {
+    background: #2a2a2a;
+    color: var(--color-texto);
+}
+
+/* Cards Sociales */
+body.dark .social-card {
+    background: #202020;
+}
+
+/* CARNETS */
+body.dark .carnet {
+    background: #1a1a1a;
+    border-color: var(--color-principal);
+}
+
+body.dark .carnet .header {
+    background: var(--color-principal);
+}
+
+body.dark .carnet .info {
+    background: #242424;
+    color: var(--color-texto);
+}
+
+body.dark .carnet .footer {
+    background: #2f420f;
+    color: #fff;
+    border-top-color: var(--color-principal);
+}
+
+/* Footer */
+body.dark .footer-marquesina {
+    background: #18250b;
+    color: var(--color-secundario);
+}
+
+body.dark .footer-marquesina marquee {
+    color: var(--color-secundario);
+}
+
+/* Formularios */
+body.dark .login-form {
+    background: #1a1a1a;
+    color: var(--color-texto);
+    border-color: #333;
+}
+
+body.dark .login-form input {
+    background: #222;
+    border-color: #444;
+    color: var(--color-texto);
+}
+
+/* Cards de ventas */
+body.dark .card-venta {
+    background: #1c1c1c;
+    color: var(--color-texto);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+body.dark .card-venta .imagen {
+    background: #111;
+}
+
+/* Dropdowns */
+body.dark .dropdown-content {
+    background: #222;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+body.dark .dropdown-content a {
+    color: var(--color-texto);
+}

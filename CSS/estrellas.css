@@ -1,13 +1,44 @@
-/* Tamaño más grande de las estrellas */
-.star {
-    font-size: 14vh;        /* ¡Ahora son bien grandes y vistosas! */
-    cursor: pointer;
-    transition: all 0.3s ease;  /* Transición suave al hover y click */
-}
+/* style.css */
 
-/* Degradado natural de rojo → verde */
-.one   { color: #e74c3c; }   /* Rojo fuerte - 1 estrella */
-.two   { color: #e67e22; }   /* Naranja rojizo */
-.three { color: #f1c40f; }   /* Amarillo (punto medio) */
-.four  { color: #27ae60; }   /* Verde medio */
-.five  { color: #2ecc71; }   /* Verde brillante - 5 estrellas */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  background: hsl(137, 46%, 24%);
+  font-family: "Poppins", sans-serif;
+}
+.card {
+  max-width: 33rem;
+  background: #fff;
+  margin: 0 1rem;
+  padding: 1rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  border-radius: 0.5rem;
+}
+.star {
+  font-size: 10vh;
+  cursor: pointer;
+}
+.one {
+  color: rgb(255, 0, 0);
+}
+.two {
+  color: rgb(255, 106, 0);
+}
+.three {
+  color: rgb(251, 255, 120);
+}
+.four {
+  color: rgb(255, 255, 0);
+}
+.five {
+  color: rgb(24, 159, 14);
+}

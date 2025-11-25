@@ -33,9 +33,18 @@ body {
     scroll-behavior: smooth;
 }
 
+h1 {
+    color: var(--color-principal); /* Verde Kéfir */
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
 
 /* Encabezado */
-header {
+.header-principal {
     background: var(--color-principal);
     color: var(--color-blanco);
     padding: 0rem 3%;
@@ -48,11 +57,11 @@ header {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-header h1 {
+.header-principal h1 {
     font-size: 1.8rem;
 }
 
-nav a {
+.header-principal nav a {
     color: var(--color-blanco);
     text-decoration: none;
     margin: 0 15px;
@@ -60,9 +69,46 @@ nav a {
     transition: color 0.3s;
 }
 
-nav a:hover {
+.header-principal nav a:hover {
     color: var(--color-secundario);
 }
+
+.header-secundario {
+    background: #3e6a02; /* verde más oscuro */
+    color: var(--color-blanco);
+    padding: 0.3rem 3%; /* barra más baja */
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+     position: fixed;
+    top: 95px; /* será reemplazado por JS */
+    width: 100%;
+    z-index: 999;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+
+.header-secundario  nav a {
+    color: var(--color-blanco);
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+/* Botón dentro del header */
+.header-principal #toggle-theme {
+    background:none;   /* Amarillo Kéfir */
+    color: var(--color-blanco);         /* Verde Kéfir */
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 15px;
+    transition: 0.3s ease;
+    font-size: 0.95rem;
+}
+
+
 
 /* ----- DROPDOWN ----- */
 .dropdown {
@@ -74,45 +120,43 @@ nav a:hover {
     cursor: pointer;
 }
 
-.dropdown-content {
-    display: none;
+.header-principal .dropdown-content {
+ display: none;
     position: absolute;
-    background: white;
+    background: var(--color-principal); /* Fondo verde */
     min-width: 150px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    top: 100%; /* baja el menú */
+    top: 100%;
     left: 0;
     overflow: hidden;
     z-index: 999;
 }
 
-.dropdown-content a {
-    color: var(--color-principal);
+.header-principal .dropdown-content a {
+      color: var(--color-blanco); /* TEXTO BLANCO */
     padding: 12px 16px;
     text-decoration: none;
     display: block;
     font-weight: normal;
 }
 
-.dropdown-content a:hover {
-    background: var(--color-secundario);
-    color: white;
+.header-principal .dropdown-content a:hover {
+    color: var(--color-texto); /* gris oscuro para contraste */
 }
 
-/* Mostrar el dropdown al pasar el cursor */
-.dropdown:hover .dropdown-content {
+/* Mostrar dropdown */
+.header-principal .dropdown:hover .dropdown-content {
     display: block;
 }
-
 
 /* Botón Carrito */
 #ver-carrito {
     background-color: var(--color-secundario);
-    color: var(--color-texto);
+    color: var(--color-principal);
     border: none;
     padding: 8px 15px;
-    border-radius: 5px;
+    border-radius:	 5px;
     cursor: pointer;
     font-weight: bold;
     transition: background-color 0.3s;
@@ -159,7 +203,7 @@ h2, h3 {
 	flex-direction: column;        /* 👉 Imagen arriba / texto abajo */
     align-items: center;
     justify-content: space-between;
-    background: white;
+    background: var(--color-blanco);
     box-shadow: 0 5px 15px rgba(0,0,0,0.12);
     transition: transform 0.4s ease, opacity 0.4s ease;
     opacity: 0;                /* por defecto invisibles */
@@ -215,7 +259,7 @@ h2, h3 {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(to bottom, var(--color-principal), var(--color-blanco)); /* Gradiente en lugar de imagen */
+    background: var(--color-principal); /* Gradiente en lugar de imagen */
     color: var(--color-blanco);
     text-align: center;
     padding: 100px 20px;
@@ -265,7 +309,7 @@ h2, h3 {
 
 .card-producto {
     width: 250px;
-    background: white;
+    background: var(--color-blanco);
     padding: 15px;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -314,7 +358,7 @@ h2, h3 {
     background: #008f39;
     color: white;
     padding: 10px;
-    margin-top: 10px;
+   /* margin-top: 10px;*/
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -330,6 +374,7 @@ h2, h3 {
     align-items: center;
     gap: 25px;                 /* espacio entre cards */
     padding: 20px;
+	margin-bottom: 30px;
 }
 
 .social-card {
@@ -359,7 +404,7 @@ h2, h3 {
 
 /* Beneficios */
 .beneficios {
-    background-color: #E8F5E9; /* Fondo suave para la sección */
+    background-color: var(--color-secundario); /* Fondo suave para la sección */
     border-radius: 10px;
     padding: 40px;
     text-align: center;
@@ -386,18 +431,23 @@ h2, h3 {
 }
 
 /* Footer */
-footer {
-    background: #333;
-    color: var(--color-blanco);
-    text-align: center;
-    padding: 20px 5%;
-    margin-top: 20px;
+.footer-marquesina {
+    width: 100%;
+    background: #558c03; /* Verde Kéfir */
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
 }
 
-footer h4 {
-    margin-bottom: 10px;
-    color: var(--color-secundario);
+.footer-marquesina marquee {
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
+
 
 
 .login-form {
@@ -599,13 +649,105 @@ footer h4 {
   display: block;
 }
 
-/* Tema oscuro */
-body.dark-theme {
-    --color-principal: #333333;
-    --color-secundario: #555555;
-    --color-fondo: #121212;
-    --color-texto: #ffffff;
-    --color-blanco: #fff;
-    --color-boton: #444444;
-    --color-boton-hover: #666666;
+
+/* CONTENEDOR GENERAL (opcional si quieres centrar todo) */
+.carnet-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+	margin-bottom: 30px;
+}
+
+/* TARJETA */
+.carnet {
+    width: 9cm;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    border: 2px solid #558c03; /* verde Kéfir */
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+/* HEADER */
+.carnet .header {
+    background: #558c03;
+    color: white;
+    padding: 12px 10px;
+}
+
+.carnet .header h2 {
+    margin: 0;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.carnet .header p {
+    font-size: 16px;
+}
+
+/* FOTO (ya está en html, pero limpio estilos) */
+.carnet img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* INFO */
+.carnet .info {
+    padding: 12px;
+    background: #f5f5f5;
+}
+
+.carnet .info .name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.carnet .info .position {
+    font-size: 14px;
+    color: #558c03;
+    margin-bottom: 8px;
+}
+
+.carnet .info .details {
+    font-size: 13px;
+    color: #444;
+    line-height: 1.4;
+}
+
+/* FOOTER */
+.carnet .footer {
+    background: #dbff8e; /* amarillo Kéfir */
+    padding: 8px;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    border-top: 2px solid #558c03;
+    color: #333;
+}
+
+
+/* ----- MODO OSCURO ----- */
+.oscuro {
+    --color-principal: #2e4a01;
+    --color-fondo: #1a1a1a;
+    --color-texto: #e5e5e5;
+    --color-blanco: #ADADAD;
+	--color-secundario: #99AD06;
+    color: var(--color-texto);
+}
+
+/* Asegura que todos los elementos tomen el tema */
+.oscuro body {
+	background: #5F7401;
+},
+.oscuro header,
+.oscuro nav,
+.oscuro footer {
+    background: var(--color-fondo);
+    color: var(--color-texto);
 }

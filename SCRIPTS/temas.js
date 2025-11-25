@@ -1,9 +1,17 @@
+// Aplicar modo guardado al cargar la página
+document.addEventListener("DOMContentLoaded", () => {
+    const savedTheme = localStorage.getItem("tema");
 
-function cambiarTema(tema) {
-    if(tema === 'oscuro') {
-        document.body.classList.add('dark-theme');
-    } else {
-        document.body.classList.remove('dark-theme');
+    if (savedTheme === "oscuro") {
+        document.documentElement.classList.add("oscuro");
     }
-}
+});
+
+// Cambiar tema al presionar botón
+document.getElementById("toggle-theme").addEventListener("click", () => {
+    const isDark = document.documentElement.classList.toggle("oscuro");
+
+    // Guardar preferencia
+    localStorage.setItem("tema", isDark ? "oscuro" : "claro");
+});
 
