@@ -741,6 +741,58 @@ h2, h3 {
     color: var(--color-texto);
 }
 
+.imagen-about {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente si hay altura fija */
+    margin: 20px 0;
+}
+
+.imagen-about img {
+    max-width: 100%;   /* Evita que se pase del ancho */
+    height: auto;
+    display: block;
+    border-radius: 10px; /* opcional */
+}
+
+/* Imagen centrada */
+.imagen-about {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.imagen-about img {
+    max-width: 800px;
+    width: 90%;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Sección de introducción */
+.intro {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px 30px;
+    color: var(--color-texto);
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* Estilo del blockquote */
+.intro blockquote {
+    background: #f8fff0; /* un verde muy claro que combina con tu paleta */
+    border-left: 5px solid var(--color-principal);
+    padding: 20px 25px;
+    margin: 25px 0;
+    font-style: italic;
+    border-radius: 8px;
+}
+
+
 /* Asegura que todos los elementos tomen el tema */
 .oscuro body {
 	background: #5F7401;
